@@ -2,6 +2,8 @@ package com.example.jpaonetomany.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Kommune {
 
