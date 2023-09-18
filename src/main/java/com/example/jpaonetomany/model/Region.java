@@ -1,6 +1,7 @@
 package com.example.jpaonetomany.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Region {
     @JsonBackReference
     private Set<Kommune> kommuner = new HashSet<>();
 
+    @JsonIgnore
     public List<String> getKommunenavne() {
         List<String> lst = new ArrayList<>();
         kommuner.forEach((kom) -> lst.add(kom.getNavn()));
