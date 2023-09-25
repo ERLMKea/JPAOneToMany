@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -44,6 +45,17 @@ public class KommuneRestController {
         }
     }
 
+    @DeleteMapping("/kommune/{kode}")
+    public ResponseEntity<String> deleteKommune(@PathVariable String kode) {
+        Optional<Kommune> kommune = kommuneRepository.findById(kode);
+        if (kommune.isPresent()) {
+            kommuneRepository.deleteById(kode);
+            return ResponseEntity.ok("Kommune deleted");
+        } else {
+            //return ResponseEntity.notFound().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Kommune not found");
+        }
+    }
 
 
 }

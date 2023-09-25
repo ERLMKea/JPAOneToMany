@@ -65,7 +65,7 @@ public class RegionRestController {
     }
 
     @DeleteMapping("/region/{kode}")
-    public ResponseEntity<String> deleteStudent(@PathVariable String kode) {
+    public ResponseEntity<String> deleteKommune(@PathVariable String kode) {
         Optional<Region> region = regionRepository.findById(kode);
         if (region.isPresent()) {
             regionRepository.deleteById(kode);
