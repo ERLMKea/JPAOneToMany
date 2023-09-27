@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileInputStream;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,7 +53,6 @@ public class RegionRestController {
             //return new ResponseEntity<>(new Student(), HttpStatus.NOT_FOUND);
         }
     }
-
 
     @GetMapping("/regioner")
     public List<Region> getRegionerRepos() {
