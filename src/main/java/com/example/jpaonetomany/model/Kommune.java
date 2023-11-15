@@ -14,6 +14,14 @@ public class Kommune {
     private String href;
     private String hrefPhoto;
 
+    public Kommune() {
+    }
+
+    public Kommune(String kode, String navn) {
+        this.kode = kode;
+        this.navn = navn;
+    }
+
     @ManyToOne
     @JoinColumn(name = "region", referencedColumnName = "kode")
     Region region;
