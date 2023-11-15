@@ -10,7 +10,6 @@ public class RestTemplateConfig {
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        System.out.println("builder en rest");
         return builder.build();
     }
 
